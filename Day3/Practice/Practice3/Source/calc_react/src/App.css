@@ -1,0 +1,29 @@
+
+.App{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.child > * {
+  margin-bottom: 2rem;
+}
+
+label,
+input,
+select {
+  /* flex: 1; */
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+button{
+  padding: 1rem;
+  font-size: 1.5rem;
+  color: blue;
+  border-radius: 10px;
+}
+.result{
+  font-size: 4rem;
+}

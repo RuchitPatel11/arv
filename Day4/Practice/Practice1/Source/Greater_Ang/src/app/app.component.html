@@ -1,0 +1,16 @@
+<div class="main-div">
+  <div><img src="../assets/angular.png" alt="logo"></div>
+  <div><h1>Find the Greater</h1></div>
+  <div class="child">
+    <div>
+      <label for="num1">Enter Num1: </label>
+      <input type="number" name="num1" id="num1" [(ngModel)]="num1" />
+    </div>
+    <div>
+      <label for="num2">Enter Num2: </label>
+      <input type="number" name="num2" id="num2" [(ngModel)]="num2" />
+    </div>
+    
+    <app-greater [num1]="num1" [num2]="num2"></app-greater>
+  </div>
+</div>

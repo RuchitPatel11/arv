@@ -1,0 +1,6 @@
+<div *ngIf="num1 > num2; else elseIfBlock">{{ num1 }} is Greater</div>
+<ng-template #elseIfBlock>
+  <div *ngIf="num2 > num1; else elseBlock">{{ num2 }} is Greater</div>
+  <ng-template #elseBlock>
+    <div>Both are Equal</div></ng-template>
+</ng-template>

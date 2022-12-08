@@ -1,0 +1,105 @@
+
+<div class="d-flex flex-column gap-3">
+    <h1 class="text-center">Employee Form</h1>
+    <div class="d-flex col-md-6 gap-2">
+      <label for="id" class="form-label">ID: </label>
+      <input type="text" class="form-control" name="id" id="id" [(ngModel)]="emp.id" />
+    </div>
+    <div class="d-flex col-md-6 gap-2">
+      <label for="name" class="form-label">Name: </label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="name"
+        [(ngModel)]="emp.name"
+      />
+    </div>
+    <div class="d-flex col-md-6 gap-2">
+      <label for="address" class="form-label">Address: </label>
+      <input
+        type="text"
+        class="form-control"
+        name="address"
+        id="address"
+        [(ngModel)]="emp.address"
+      />
+    </div>
+    <div class="d-flex col-md-6 gap-2">
+      <h6>Gender:</h6>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="gender"
+          value="Male"
+          [(ngModel)]="emp.gender"
+        />
+        <label for="Male">Male</label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          name="gender"
+          id="gender"
+          value="Female"
+          [(ngModel)]="emp.gender"
+        />
+        <label for="Female">Female</label>
+      </div>
+    </div>
+    <div>
+      <div class="d-flex col-md-6 gap-2">
+        <label class="form-check-label" for="hobby1"> Hobbies: </label>
+        <input
+
+          type="text"
+          class="form-control"
+          id="hobby"
+          name="hobby"
+          [(ngModel)]="emp.hobbies"
+        />
+        
+      </div>
+    </div>
+    <div>
+      <label for="doj" class="form-label m-1">DOJ: </label>
+      <input type="date" [(ngModel)]="emp.DOJ" />
+    </div>
+    <div>
+      <button (click)="addEmployee()" class="btn btn-success w-25">Add</button>
+    </div>
+  </div>
+  <div class="mt-4">
+    <h2 class="text-center">Employees</h2>
+    <button type="button" class="btn btn-danger float-end m-2" (click)="sortEmployee()">
+      Sort By Name
+    </button>
+    <button type="button" class="btn btn-danger float-end m-2" (click)="filterEmployee()">
+        Filter By Month
+      </button>
+    <table aria-describedby="emp_vue" class="table table-striped mt-5">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Hobbies</th>
+          <th scope="col">DOJ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let emp of employees">
+          <th scope="row">{{ emp.id }}</th>
+          <td>{{ emp.name }}</td>
+          <td>{{ emp.address }}</td>
+          <td>{{ emp.gender }}</td>
+          <td>{{ emp.hobbies }}</td>
+          <td>{{ emp.DOJ }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

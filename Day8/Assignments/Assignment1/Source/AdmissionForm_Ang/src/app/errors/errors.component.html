@@ -1,0 +1,17 @@
+<div
+  *ngIf="field?.invalid && (field?.touched || field?.dirty)"
+  class="text-red-600"
+>
+  <div *ngIf="field?.errors?.['required']">
+    This field is Required
+    <span class="fa-solid fa-circle-exclamation"></span>
+  </div>
+  <div *ngIf="field?.errors?.['minlength']">
+    Minimum Character Required is 3
+    <span class="fa-solid fa-circle-exclamation"></span>
+  </div>
+  <div *ngIf="field?.errors?.['pattern']">
+    Enter Valid Phone Number
+    <span class="fa-solid fa-circle-exclamation"></span>
+  </div>
+</div>

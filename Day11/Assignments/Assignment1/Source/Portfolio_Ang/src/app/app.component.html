@@ -1,0 +1,41 @@
+<div class="portfolio-content">
+  <nav aria-label="Portfolio-menu">
+    <div class="portfolio-header">
+      <div class="portfolio-avatar">
+        <img src="../assets/avatar.png" alt="avatar" />
+        <h1>Ruchit Patel</h1>
+      </div>
+    </div>
+    <div class="Leftbar-Links">
+      <ul class="portfolio-links">
+        <li routerLink="/about">
+          <span class="fa-solid fa-circle-info"></span>About
+        </li>
+        <li routerLink="/contact">
+          <span class="fa-solid fa-id-card"></span>Contact
+        </li>
+        <li routerLink="/education">
+          <span class="fa-solid fa-graduation-cap"></span>Education
+        </li>
+        <li routerLink="/work-experience">
+          <span class="fa-solid fa-briefcase"></span>Work Experience
+        </li>
+        <li routerLink="/project">
+          <span class="fa-solid fa-diagram-project"></span>Projects
+        </li>
+        <li routerLink="/skill">
+          <span class="fa-solid fa-user-gear"></span>Skills
+        </li>
+        <li routerLink="/certificate">
+          <span class="fa-solid fa-award"></span>Online Certifications Courses
+        </li>
+        <li routerLink="/connect">
+          <span class="fa-solid fa-link"></span>Connect
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="portfolio-details">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,0 +1,876 @@
+<div class="flex justify-center min-h-screen py-10">
+  <div class="container mx-auto">
+    <form [formGroup]="admissionForm" (ngSubmit)="onSubmit($event)">
+      <div
+        class="flex flex-col px-8 pt-6 pb-8 shadow-2xl rounded-2xl lg:flex-row bg-slate-200"
+      >
+        <div class="p-4 lg:w-1/3">
+          <div formGroupName="Name">
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="fname"
+                >
+                  STUDENT'S FIRST NAME
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+
+              <div
+                class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+              >
+                <span
+                  class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                  ><span class="fa-solid fa-user-tie"></span
+                ></span>
+                <input
+                  type="text"
+                  id="fname"
+                  name="fname"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                  placeholder="Student's First Name"
+                  formControlName="fname"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="FName"></app-errors>
+            </div>
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="mname"
+                >
+                  STUDENT'S MIDDLE NAME
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div class="flex items-center bg-white rounded-2xl">
+                <input
+                  type="text"
+                  id="mname"
+                  name="mname"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                  placeholder="Student's Middle Name"
+                  formControlName="mname"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="MName"></app-errors>
+            </div>
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="lname"
+                >
+                  STUDENT'S LAST NAME
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div class="flex items-center bg-white rounded-2xl">
+                <input
+                  type="text"
+                  id="lname"
+                  name="lname"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                  placeholder="Student's Last Name"
+                  formControlName="lname"
+                />
+              </div>
+            </div>
+
+            <div>
+              <app-errors [field]="LName"></app-errors>
+            </div>
+          </div>
+          <div formGroupName="Birth">
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="DOB"
+                >
+                  DATE OF BIRTH
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div class="flex items-center bg-white rounded-2xl">
+                <input
+                  type="date"
+                  name="DOB"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                  placeholder="Date Of Birth"
+                  max="2019-05-30"
+                  formControlName="DOB"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="DOB"></app-errors>
+            </div>
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="POB"
+                >
+                  PLACE OF BIRTH
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div class="flex items-center bg-white rounded-2xl">
+                <input
+                  type="text"
+                  id="POB"
+                  name="POB"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                  placeholder="Place Of Birth"
+                  formControlName="POB"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="POB"></app-errors>
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="flex gap-2">
+              <label
+                class="block mb-3 text-lg font-bold text-gray-700"
+                for="language"
+              >
+                MOTHER TONGUE
+              </label>
+              <span class="text-red-600 ext-xl">*</span>
+            </div>
+            <div class="flex items-center bg-white rounded-2xl">
+              <input
+                type="text"
+                id="language"
+                name="language"
+                class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                placeholder="Mother Tongue"
+                formControlName="FirstLanguage"
+              />
+            </div>
+          </div>
+          <div>
+            <app-errors [field]="FirLang"></app-errors>
+          </div>
+          <div formGroupName="Address">
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="street"
+                >
+                  ADDRESS
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+
+              <textarea
+                id="street"
+                rows="4"
+                class="w-full px-3 py-2 leading-tight text-blue-600 border resize-none rounded-2xl focus:outline-blue-500 placeholder:text-slate-400"
+                placeholder="Flat NO./Street Name/Building Name"
+                formControlName="street"
+              ></textarea>
+            </div>
+            <div>
+              <app-errors [field]="Street"></app-errors>
+            </div>
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="city"
+                >
+                  CITY
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div
+                class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+              >
+                <span
+                  class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                  ><span class="fa-solid fa-city"></span
+                ></span>
+                <input
+                  type="text"
+                  id="city"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                  placeholder="City"
+                  formControlName="city"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="City"></app-errors>
+            </div>
+
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="state"
+                >
+                  STATE
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+              <div
+                class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+              >
+                <span
+                  class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                  ><span class="fa-solid fa-location-dot"></span
+                ></span>
+                <input
+                  type="text"
+                  id="state"
+                  class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                  placeholder="State"
+                  formControlName="state"
+                />
+              </div>
+            </div>
+            <div>
+              <app-errors [field]="State"></app-errors>
+            </div>
+            <div class="mb-3">
+              <div class="flex gap-2">
+                <label
+                  class="block mb-3 text-lg font-bold text-gray-700"
+                  for="pincode"
+                >
+                  PIN
+                </label>
+                <span class="text-red-600 ext-xl">*</span>
+              </div>
+
+              <input
+                type="number"
+                id="pincode"
+                name="pincode"
+                class="w-full px-3 py-2 leading-tight text-blue-600 outline-none placeholder:text-slate-400 rounded-2xl"
+                placeholder="PIN Code"
+                formControlName="PIN"
+              />
+            </div>
+            <div>
+              <app-errors [field]="PIN"></app-errors>
+            </div>
+          </div>
+
+          <div class="flex justify-center">
+            <input
+              type="submit"
+              [disabled]="!admissionForm.valid"
+              value="SUBMIT"
+              class="inline-block w-64 px-6 py-2 mt-4 text-base font-bold leading-tight text-blue-500 border-2 border-blue-500 rounded-full enabled:hover:bg-blue-500 enabled:hover:text-white disabled:opacity-50"
+            />
+          </div>
+        </div>
+        <div class="w-px m-2 my-10 bg-blue-500/40"></div>
+        <div class="lg:w-1/3">
+          <div class="p-4 pt-6">
+            <div formGroupName="Father">
+              <div formGroupName="Name">
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="fname"
+                    >
+                      FATHER'S FIRST NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div
+                    class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                  >
+                    <span
+                      class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                      ><span class="fa-solid fa-user-tie"></span
+                    ></span>
+                    <input
+                      type="text"
+                      id="fname"
+                      name="fname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Father's First Name"
+                      formControlName="fname"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <app-errors [field]="FathFName"></app-errors>
+                </div>
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="mname"
+                    >
+                      FATHER'S MIDDLE NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="mname"
+                      name="mname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Father's Middle Name"
+                      formControlName="mname"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <app-errors [field]="FathMName"></app-errors>
+                </div>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="lname"
+                    >
+                      FATHER'S LAST NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="lname"
+                      name="lname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Father's Last Name"
+                      formControlName="lname"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <app-errors [field]="FathLName"></app-errors>
+                </div>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="email"
+                    >
+                      FATHER'S EMAIL
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div
+                    class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                  >
+                    <span
+                      class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                      ><span class="fa-solid fa-at"></span
+                    ></span>
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Father's Email"
+                      formControlName="Email"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <app-errors [field]="FEmail"></app-errors>
+                </div>
+
+                <div formGroupName="KnowledgeGate">
+                  <div class="mb-3">
+                    <div class="flex gap-2">
+                      <label
+                        class="block mb-3 text-lg font-bold text-gray-700"
+                        for="education"
+                      >
+                        FATHER'S EDUCATION
+                      </label>
+                      <span class="text-red-600 ext-xl">*</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-2xl">
+                      <input
+                        type="text"
+                        name="education"
+                        class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                        placeholder="Education"
+                        formControlName="education"
+                      />
+                    </div>
+                  </div>
+                  <app-errors [field]="FEducation"></app-errors>
+
+                  <div class="mb-3">
+                    <div class="flex gap-2">
+                      <label
+                        class="block mb-3 text-lg font-bold text-gray-700"
+                        for="qualification"
+                      >
+                        FATHER'S QUALIFICATION
+                      </label>
+                      <span class="text-red-600 ext-xl">*</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-2xl">
+                      <input
+                        type="text"
+                        id="qualification"
+                        name="qualification"
+                        class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                        placeholder="Qualification"
+                        formControlName="qualification"
+                      />
+                    </div>
+                  </div>
+                  <app-errors [field]="FQualification"></app-errors>
+
+                  <div class="mb-3">
+                    <div class="flex gap-2">
+                      <label
+                        class="block mb-3 text-lg font-bold text-gray-700"
+                        for="profession"
+                      >
+                        FATHER'S PROFESSION
+                      </label>
+                      <span class="text-red-600 ext-xl">*</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-2xl">
+                      <input
+                        type="text"
+                        id="profession"
+                        name="profession"
+                        class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                        placeholder="Profession"
+                        formControlName="profession"
+                      />
+                    </div>
+                  </div>
+                  <app-errors [field]="FProfession"></app-errors>
+
+                  <div class="mb-3">
+                    <div class="flex gap-2">
+                      <label
+                        class="block mb-3 text-lg font-bold text-gray-700"
+                        for="designation"
+                      >
+                        FATHER'S DESIGNATION
+                      </label>
+                      <span class="text-red-600 ext-xl">*</span>
+                    </div>
+                    <div class="flex items-center bg-white rounded-2xl">
+                      <input
+                        type="text"
+                        id="designation"
+                        name="designation"
+                        class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                        placeholder="Designation"
+                        formControlName="designation"
+                      />
+                    </div>
+                  </div>
+                  <app-errors [field]="FDesignation"></app-errors>
+
+                  <div class="mb-3">
+                    <div class="flex gap-2">
+                      <label
+                        class="block mb-3 text-lg font-bold text-gray-700"
+                        for="fathnumber"
+                      >
+                        FATHER'S CONTACT NUMBER
+                      </label>
+                      <span class="text-red-600 ext-xl">*</span>
+                    </div>
+                    <div
+                      class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                    >
+                      <span
+                        class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                        ><span class="fa-solid fa-phone"></span
+                      ></span>
+                      <input
+                        type="number"
+                        id="fathnumber"
+                        name="fathnumber"
+                        class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                        placeholder="Father's Phone Number"
+                        formControlName="phoneNo"
+                      />
+                    </div>
+                  </div>
+                  <app-errors [field]="FPhoneNo"></app-errors>
+                </div>
+              </div>
+              <div formGroupName="Emergency">
+                <div class="mb-3">
+                  <div
+                    class="my-5 text-2xl font-light text-center text-red-600 underline"
+                  >
+                    <h1>EMERGENCY CONTACT DETAILS</h1>
+                  </div>
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="relation"
+                    >
+                      EMERGENCY CONTACT RELATION
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="relation"
+                      name="relation"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Relation"
+                      formControlName="relation"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="ERelation"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="emernumber"
+                    >
+                      EMERGENCY CONTACT NUMBER
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div
+                    class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                  >
+                    <span
+                      class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                      ><span class="fa-solid fa-phone"></span
+                    ></span>
+                    <input
+                      type="number"
+                      id="emernumber"
+                      name="emernumber"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Emergency Contact Number"
+                      formControlName="phoneNo"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="EmerPhone"></app-errors>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-px m-2 my-10 bg-blue-500/40"></div>
+        <div class="lg:w-1/3">
+          <div class="p-4 pt-6">
+            <div formGroupName="Mother">
+              <div formGroupName="Name">
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="fname"
+                    >
+                      MOTHER'S FIRST NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div
+                    class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                  >
+                    <span
+                      class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                      ><span class="fa-solid fa-user-tie"></span
+                    ></span>
+                    <input
+                      type="text"
+                      id="fname"
+                      name="fname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Mother's First Name"
+                      formControlName="fname"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MothFName"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="mname"
+                    >
+                      MOTHER'S MIDDLE NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="mname"
+                      name="mname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Mother's Middle Name"
+                      formControlName="mname"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MothMName"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="lname"
+                    >
+                      MOTHER'S LAST NAME
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="lname"
+                      name="lname"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Mother's Last Name"
+                      formControlName="lname"
+                    />
+                  </div>
+                </div>
+
+                <app-errors [field]="MothLName"></app-errors>
+              </div>
+
+              <div class="mb-3">
+                <div class="flex gap-2">
+                  <label
+                    class="block mb-3 text-lg font-bold text-gray-700"
+                    for="email"
+                  >
+                    MOTHER'S EMAIL
+                  </label>
+                  <span class="text-red-600 ext-xl">*</span>
+                </div>
+                <div
+                  class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                >
+                  <span
+                    class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                    ><span class="fa-solid fa-at"></span
+                  ></span>
+                  <input
+                    type="email"
+                    id="email"
+                    class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                    placeholder="Mother's Email"
+                    formControlName="Email"
+                  />
+                </div>
+              </div>
+              <app-errors [field]="MEmail"></app-errors>
+
+              <div formGroupName="KnowledgeGate">
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="education"
+                    >
+                      MOTHER'S EDUCATION
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      name="education"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Education"
+                      formControlName="education"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MEducation"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="qualification"
+                    >
+                      MOTHER'S QUALIFICATION
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="qualification"
+                      name="qualification"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Qualification"
+                      formControlName="qualification"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MQualification"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="profession"
+                    >
+                      MOTHER'S PROFESSION
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="profession"
+                      name="profession"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Profession"
+                      formControlName="profession"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MProfession"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="designation"
+                    >
+                      MOTHER'S DESIGNATION
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div class="flex items-center bg-white rounded-2xl">
+                    <input
+                      type="text"
+                      id="designation"
+                      name="designation"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Designation"
+                      formControlName="designation"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MDesignation"></app-errors>
+
+                <div class="mb-3">
+                  <div class="flex gap-2">
+                    <label
+                      class="block mb-3 text-lg font-bold text-gray-700"
+                      for="mothnumber"
+                    >
+                      MOTHER'S CONTACT NUMBER
+                    </label>
+                    <span class="text-red-600 ext-xl">*</span>
+                  </div>
+                  <div
+                    class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                  >
+                    <span
+                      class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                      ><span class="fa-solid fa-phone"></span
+                    ></span>
+                    <input
+                      type="number"
+                      id="fathnumber"
+                      name="mothnumber"
+                      class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                      placeholder="Mother's Phone Number"
+                      formControlName="phoneNo"
+                    />
+                  </div>
+                </div>
+                <app-errors [field]="MPhoneNo"></app-errors>
+              </div>
+            </div>
+
+            <div formGroupName="Reference">
+              <div class="mb-3">
+                <div
+                  class="my-5 text-2xl font-light text-center text-red-600 underline"
+                >
+                  <h1>REFERENCE DETAILS</h1>
+                </div>
+                <div class="flex gap-2">
+                  <label
+                    class="block mb-3 text-lg font-bold text-gray-700"
+                    for="relation"
+                  >
+                    REFERENCE PERSON ADDRESS
+                  </label>
+                  <span class="text-red-600 ext-xl">*</span>
+                </div>
+                <div class="flex items-center bg-white rounded-2xl">
+                  <input
+                    type="text"
+                    id="raddress"
+                    name="raddress"
+                    class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent focus:outline-blue-500 placeholder:text-slate-400 rounded-2xl"
+                    placeholder="Reference Address"
+                    formControlName="address"
+                  />
+                </div>
+              </div>
+              <app-errors [field]="RAddress"></app-errors>
+
+              <div class="mb-3">
+                <div class="flex gap-2">
+                  <label
+                    class="block mb-3 text-lg font-bold text-gray-700"
+                    for="refnumber"
+                  >
+                    REFERENCE CONTACT NUMBER
+                  </label>
+                  <span class="text-red-600 ext-xl">*</span>
+                </div>
+                <div
+                  class="flex items-center bg-white group rounded-2xl focus-within:ring-2 focus-within:ring-blue-500"
+                >
+                  <span
+                    class="px-3 py-1 m-0 h-full bg-blue-500 rounded-2xl text-white group-focus-within:ml-[2px] transition-all duration-200"
+                    ><span class="fa-solid fa-phone"></span
+                  ></span>
+                  <input
+                    type="number"
+                    id="refnumber"
+                    name="refnumber"
+                    class="w-full px-3 py-2 leading-tight text-blue-600 bg-transparent outline-none placeholder:text-slate-400 rounded-2xl"
+                    placeholder="Reference Contact Number"
+                    formControlName="phoneNo"
+                  />
+                </div>
+              </div>
+              <app-errors [field]="RefPhone"></app-errors>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    {{ admissionForm.value | json }}
+  </div>
+</div>

@@ -1,0 +1,190 @@
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  color: #264653;
+  min-height: 100vh;
+}
+app-root {
+  min-height: 100vh;
+}
+
+nav {
+  background-color: #e9c46a;
+}
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-header {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+.portfolio-avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.portfolio-toggle {
+  border: 3px solid #264653;
+  cursor: pointer;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.portfolio-toggle-btn {
+  font-size: 46px;
+  font-weight: 900;
+  padding: 0.75rem;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+
+span {
+  padding-right: 1rem;
+}
+
+h1 {
+  font-size: 2em;
+
+  line-height: 1.1;
+  text-decoration: underline;
+}
+
+.portfolio-details {
+  background: linear-gradient(190deg, #e9c46a, #1b323b);
+  /* background-color: #264653; */
+  flex: 1;
+  color: rgba(255, 255, 255);
+  padding: 4rem;
+  font-size: 22px;
+}
+
+.portfolio-details h1 {
+  color: #264653;
+}
+
+.portfolio-show,
+.portfolio-details-show {
+  display: block !important;
+}
+
+.portfolio-links {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+
+.portfolio-links > li {
+  padding: 1em 0;
+  background-color: #264653;
+  color: rgba(255, 255, 255);
+  margin: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.portfolio-Skills li {
+  list-style: none;
+  line-height: 2;
+}
+
+.portfolio-Projects li {
+  list-style: "\2713";
+  line-height: 2;
+}
+
+.portfolio-links > li:hover {
+  background-color: #2a9d8f;
+  color: rgba(255, 255, 255);
+}
+
+.Work-details {
+  display: flex;
+}
+
+.Work-details-logo {
+  margin-right: 3rem;
+}
+
+.Certifications-details {
+  display: flex;
+}
+
+.Certifications-details-logo {
+  margin-right: 3rem;
+}
+
+.portfolio-Education p {
+  margin-left: 2rem;
+}
+
+.portfolio-Connect a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.portfolio-About p {
+  line-height: 2;
+  margin-right: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .portfolio-content {
+    flex-direction: row;
+    min-height: inherit;
+  }
+
+  .portfolio-avatar > h1 {
+    font-size: 2em;
+  }
+
+  nav {
+    flex: 0.25;
+  }
+
+  .portfolio-header {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .portfolio-links {
+    display: block;
+  }
+
+  .portfolio-links > li {
+    padding: 1em 1em;
+  }
+}

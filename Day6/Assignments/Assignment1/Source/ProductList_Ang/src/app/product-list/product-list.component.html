@@ -1,0 +1,40 @@
+<section style="background-color: #eee">
+  <div class="container py-5">
+    <div class="row">
+      <ng-container *ngFor="let item of product">
+        <div class="card text-black col-md-4">
+          <img [src]="item.img" class="card-img-top" alt="" />
+          <div class="card-body">
+            <div class="text-center">
+              <h5 class="card-title fs-4">{{ item.name }}</h5>
+            </div>
+            <div>
+              <div class="d-flex justify-content-between">
+                <span>Quantity:</span>
+                <span>{{ item.quantity }}</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Price:</span>
+                <span>₹ {{ item.price }}</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Grand Total:</span>
+                <span>₹ {{item.gross}}</span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <span>Discount:</span>
+                <span>- ₹ {{ item.discount }}</span>
+              </div>
+            </div>
+            <div
+              class="d-flex justify-content-between total font-weight-bold fs-4 mt-4 bg-secondary p-3 text-white"
+            >
+              <span>Total:</span>
+              <span>₹ {{ item.payable }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

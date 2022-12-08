@@ -1,0 +1,21 @@
+<div class="main-div">
+  <div class="child">
+    <div>
+      <label for="num1">Enter Num1: </label>
+      <input type="number" name="num1" id="num1" [(ngModel)]="num1" />
+    </div>
+    <div>
+      <label for="num2">Enter Num2: </label>
+      <input type="number" name="num2" id="num2" [(ngModel)]="num2" />
+    </div>
+    <div>
+      <select id="operation" name="operation" [(ngModel)]="operation">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </div>
+    <app-calc [num1]="num1" [num2]="num2" [operation]="operation"></app-calc>
+  </div>
+</div>
